@@ -3,11 +3,12 @@ const board = document.getElementById('game-board');
 const message = document.getElementById('message');
 const keyboard = document.getElementById('keyboard');
 
-// Game Variables
+// Game Controllers => Global Variables
 const keys = ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'ENTER', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', '⌫'];
 
 const wordList = words;
 const targetWord = wordList[Math.floor(Math.random() * wordList.length)];
+console.log(targetWord);
 
 const gameBoard = [
 	['', '', '', '', ''],
@@ -22,7 +23,8 @@ let currentPosition = 0;
 let guessedWord = '';
 let isGameOver = false;
 
-// Functions
+// Game Logic => Functions
+
 function drawBoard() {
 	gameBoard.forEach((oneRow, index) => {
 		const row = document.createElement('div');
@@ -89,21 +91,23 @@ function addLetter(letter) {
 		gameBoard[currentRow][currentPosition] = letter;
 		return currentPosition++;
 	}
+	return
 }
 
 function deleteLetter() {
 	message.innerText = '';
-
 	if (currentPosition > 0 && currentPosition <= 5) {
-		//Update DOM
+        //Update DOM
 		const cardElement = document.getElementById(`row-${currentRow}-card-${currentPosition - 1}`);
 		cardElement.innerText = '';
 		cardElement.classList.remove('has-letter');
-
-		// Update game controllers
-		gameBoard[currentRow][currentPosition] = '';
-		return currentPosition--;
+		
+        //Update game controllers
+        gameBoard[currentRow][currentPosition - 1] = "";
+        currentPosition--;
+		return;
 	}
+	return;
 }
 
 function submitGuess() {
@@ -141,8 +145,9 @@ function checkLetters() {
 			btnKey.classList.add('wrong');
 		}
 	});
-	startNewGuess();
+
+	return startNewGuess();
 }
 
-//
+// Initialize Game => Call start function
 startGame();
