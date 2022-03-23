@@ -1,0 +1,80 @@
+body { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: grid;
+	place-items: center;
+	font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
+	color: black;
+}
+h1 {
+	margin: 15px
+}
+.game-container {
+    width: 500px;
+	display: grid;
+	place-items: center;
+}
+#message {
+    min-height: 30px;
+    max-width: fit-content;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+.row {
+    display: flex;
+}
+.card {
+    height: 65px;
+	width: 65px;
+	margin: 5px;
+	border: 2px solid lightgrey;
+    display: grid;
+    place-items: center;
+	font-size: 2rem;
+	font-weight: bold;
+}
+#keyboard {
+	display: grid;
+	gap: 3px;
+	grid-template-rows: repeat(3, 1fr);
+	grid-template-columns: repeat(20, 1fr);
+	justify-content: center;
+    margin-top: 30px;
+}
+button {
+	grid-column: span 2;
+	padding: 15px 10px;
+	border-radius: 6px;
+	border: 2px solid #d3d6da;
+	background-color: #d3d6da;
+	font-weight: bold;
+	color: black;
+}
+button:nth-child(11) {
+	grid-column: 2/4;
+}
+button:nth-child(20) {
+	grid-column: 1/4;
+}
+button:nth-child(28) {
+	grid-column: 18/21;
+}
+.has-letter {
+	border-color: grey;
+}
+.correct {
+	background-color: #6aa964;
+	border: #6aa964 2px solid;
+	color: #fff;
+}
+.wrong-place {
+	background-color: #cab458;
+	border: #cab458 2px solid;
+	color: #fff;
+}
+.wrong {
+	background-color: #787c7e;
+	border: #787c7e 2px solid;
+	color: #fff;
+}
