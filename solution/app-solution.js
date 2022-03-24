@@ -8,7 +8,6 @@ const keys = ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', 'A', 'S', 'D', '
 
 const wordList = words;
 const targetWord = wordList[Math.floor(Math.random() * wordList.length)];
-console.log(targetWord);
 
 const gameBoard = [
 	['', '', '', '', ''],
@@ -73,10 +72,13 @@ function startNewGuess() {
 function handleClick(letter) {
 	if (letter === '⌫') {
 		deleteLetter();
+        return
 	} else if (letter === 'ENTER') {
 		submitGuess();
+        return
 	} else {
 		addLetter(letter);
+        return
 	}
 }
 
@@ -151,3 +153,4 @@ function checkLetters() {
 
 // Initialize Game => Call start function
 startGame();
+

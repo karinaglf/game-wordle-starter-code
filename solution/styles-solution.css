@@ -10,7 +10,7 @@ body {
 h1 {
 	margin: 15px
 }
-.game-container {
+#game-container {
     width: 500px;
 	display: grid;
 	place-items: center;
@@ -51,13 +51,13 @@ button {
 	font-weight: bold;
 	color: black;
 }
-button:nth-child(11) {
+#key-A {
 	grid-column: 2/4;
 }
-button:nth-child(20) {
+#key-ENTER {
 	grid-column: 1/4;
 }
-button:nth-child(28) {
+#key-⌫ {
 	grid-column: 18/21;
 }
 .has-letter {
